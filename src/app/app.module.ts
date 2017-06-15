@@ -1,8 +1,8 @@
+import { SxcAngular, SxcHttpProvider } from '@2sic.com/dnn-sxc-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { SxcAngular } from "@2sic.com/sxc-angular";
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +15,10 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    SxcAngular,
+    SxcHttpProvider
+  ],
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }
