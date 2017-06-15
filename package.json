@@ -6,7 +6,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --base-href ./app-dnn-sxc-angular-dev",
+    "watch:copy": "cpx \"dist/**/*.*\" \"//srv-devweb-01.2sic.com/Projects/2sxc Apps Dev/Web/Portals/app-dnn-sxc-angular-dev/2sxc/\" -v -w",
+    "watch:build": "ng build --watch --base-href ./app-dnn-sxc-angular-dev",
+    "develop": "concurrently \"npm run watch:copy\" \"npm run watch:build\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,7 +33,11 @@
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
+    "chokidar-cli": "^1.2.0",
     "codelyzer": "~2.0.0",
+    "concurrently": "^3.4.0",
+    "copy-and-watch": "^0.1.2",
+    "cpx": "^1.5.0",
     "gulp-watch": "^4.3.11",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
@@ -41,9 +47,11 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.0.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.2.0"
+    "typescript": "~2.2.0",
+    "watch": "^1.0.2"
   }
 }

@@ -13,8 +13,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    SxcAngular
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
