@@ -8,5 +8,5 @@ The dev environment for [dnn-sxc-angular](https://github.com/2sic/dnn-sxc-angula
 - clone dnn-2sxc-angular into './node_modules/@2sic.com/'
 
 **develop**
-> This will watch, build and publish your code to [2sxc App Development](http://app-dev.2sxc.org/).
-- run the 'develop' task or 'npm run develop'
+> This will watch, build and then publish your code to [2sxc App Development](http://app-dev.2sxc.org/).
+- task 'develop' or 'npm run develop'
