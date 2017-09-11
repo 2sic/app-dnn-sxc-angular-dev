@@ -1,24 +1,24 @@
-import { ContentResourceFactory, SxcAngular, SxcAppComponent } from '@2sic.com/dnn-sxc-angular';
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { SxcAppComponent, Context, Data } from '@2sic.com/dnn-sxc-angular';
 
 @Component({
     selector: 'app-root',
-    template: `<app-person *ngFor="let person of persons" [person]="person"></app-person>`,
+    template: `V2: <app-person *ngFor="let person of persons" [person]="person"></app-person>`,
     styleUrls: ['./app.component.css']
 })
-export class AppComponent extends SxcAppComponent implements OnInit  {
+export class AppComponent extends SxcAppComponent implements OnInit {
     persons: Person[];
 
     constructor(
         el: ElementRef,
-        sxcNg: SxcAngular,
-        private crf: ContentResourceFactory
+        context: Context,
+        private data: Data,
     ) {
-        super(el, sxcNg);
+        super(el, context);
     }
-    
+
     ngOnInit() {
-        this.crf.resource<Person[]>('person').get()
+        this.data.content<Person>('person').get()
             .subscribe(persons => this.persons = persons);
     }
 }

@@ -1,12 +1,12 @@
-import {SxcHttpProvider} from '../../node_modules/@2sic.com/dnn-sxc-angular/src/sxc-http.provider';
-import { ContentResourceFactory, SxcAngular, SxcHttpProviderFactory, SxcAngularModule } from '@2sic.com/dnn-sxc-angular';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RequestOptions, Http, HttpModule, XHRBackend } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
+import { Data, HttpClient } from '@2sic.com/dnn-sxc-angular';
 
 @NgModule({
   declarations: [
@@ -17,17 +17,10 @@ import { PersonComponent } from './person/person.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    SxcAngularModule
   ],
   providers: [
-    SxcAngular,
-    ContentResourceFactory,
-    SxcHttpProvider,
-    {
-      provide: Http,
-      useFactory: SxcHttpProviderFactory,
-      deps: [XHRBackend, RequestOptions, SxcAngular]
-    }
+    Data,
+    HttpClient,
   ],
   bootstrap: [AppComponent]
 })
