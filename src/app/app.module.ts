@@ -1,12 +1,12 @@
+import { DnnInterceptor, DevContext, Context, Data } from '@2sic.com/dnn-sxc-angular';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpHandler, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
-import { Data, HttpClient } from '@2sic.com/dnn-sxc-angular';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,13 @@ import { Data, HttpClient } from '@2sic.com/dnn-sxc-angular';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
+    DnnInterceptor,
+    Context,
     Data,
-    HttpClient,
   ],
   bootstrap: [AppComponent]
 })
