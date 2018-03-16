@@ -5,8 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-hashing none",
-    "build:prod": "ng build --prod --output-hashing none",
+    "build": "ng build --output-hashing none --extract-css=true",
+    "build:prod": "ng build --prod --output-hashing none --sourcemaps=true -vc=true",
     "build:clean": "del \"//srv-devweb-01.2sic.com/Projects/2sxc Apps Dev/Web/Portals/app-dnn-sxc-angular-dev/2sxc/app-dnn-sxc-angular-dev/dist/\" /S /Q",
     "watch:copy": "cpx \"dist/**/*.*\" \"//srv-devweb-01.2sic.com/Projects/2sxc Apps Dev/Web/Portals/app-dnn-sxc-angular-dev/2sxc/app-dnn-sxc-angular-dev/dist\" -w -C",
     "watch:build": "ng build --no-output-hashing --watch --base-href ./app-dnn-sxc-angular-dev",
