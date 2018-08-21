@@ -3,7 +3,7 @@ import { Context, Data, DnnAppComponent } from '@2sic.com/dnn-sxc-angular';
 
 @Component({
     selector: 'person-list',
-    template: `List of all persons: <app-person *ngFor="let person of persons" [person]="person"></app-person>`
+    template: `List of all persons:<br> <person *ngFor="let person of persons" [person]="person"></person>`
 })
 export class PersonListComponent implements OnInit {
     persons: Person[];

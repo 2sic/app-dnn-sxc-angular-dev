@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-person',
+  selector: 'person',
   template: `
     <img [attr.src]="person.image" />
-    <b>{{person.name}}</b>
+    <b>{{person.name}}</b><br>
   `
 })
 export class PersonComponent {
