@@ -1,11 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, Provider } from '@angular/core';
+import { environment } from './../environments/environment';
 import { AppComponent } from './app.component';
 import { PersonListComponent } from './person/person-list.component'
 import { PersonComponent } from './person/person.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DnnInterceptor } from '@2sic.com/dnn-sxc-angular';
+import { RuntimeSettings } from '@2sic.com/dnn-sxc-angular'
+import { DnnDevSettings } from './dev/dnn-dev-settings'
+
+const providers: Provider[] = [
+  DnnInterceptor
+];
+
+if (!environment.production) {
+  providers.push({ provide: RuntimeSettings, useValue: DnnDevSettings });
+}
 
 @NgModule({
   declarations: [
@@ -17,9 +27,7 @@ import { DnnInterceptor } from '@2sic.com/dnn-sxc-angular';
     BrowserModule,
     HttpClientModule, // import the HttpClientModule in order to request 2sxc data
   ],
-  providers: [
-    DnnInterceptor, //  ensures that HTTP calls are enhanced with DNN-variables
-  ],
+  providers: providers,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
