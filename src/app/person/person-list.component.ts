@@ -20,5 +20,5 @@ export class PersonListComponent implements OnInit {
 }
 
 class Person {
-    name: string;
+    Name: string;
 }

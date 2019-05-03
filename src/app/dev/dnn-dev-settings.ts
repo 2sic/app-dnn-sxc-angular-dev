@@ -4,12 +4,24 @@ const set = new RuntimeSettings();
 set.ignoreMissing$2sxc = true;
 set.ignoreMissingServicesFramework = true;
 
-set.moduleId = 2363;
-set.tabId = 1103;
-set.contentBlockId = 2363;
+// The base path to your DNN environment's API
+// In most of the cases, this is http://[domain]/DesktopModules/2sxc/API/
+set.path = "http://2sxc-dnn742.dnndev.me/DesktopModules/2sxc/API/";
 
-set.antiForgeryToken = 'ThisIsaTestAntiForgeryToken';
-set.path = "http://app-dev.2sxc.org/app-dnn-sxc-angular-dev/DesktopModules/2sxc/API/";
-//set.appNameInPath = 'app-dnn-sxc-angular-dev'
+// The module and tab id to get data from
+set.moduleId = 477;
+set.tabId = 123;
+
+// In most of the cases, you won't need to set this as it's the same as the module id
+// set.contentBlockId = 0;
+
+// Set this value to allow requests to APIs that are secured with anti forgery
+// set.antiForgeryToken = 'ThisIsaTestAntiForgeryToken';
+
+// Override the app name - only needed if you do not set module and tabid values
+// set.appNameInPath = 'app-dnn-sxc-angular-dev'
+
+// Set this to send authenticated requests
+set.withCredentials = true;
 
 export const DnnDevSettings = set;
