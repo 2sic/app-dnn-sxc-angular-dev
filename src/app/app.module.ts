@@ -27,7 +27,7 @@ if (!environment.production) {
     BrowserModule,
     HttpClientModule, // import the HttpClientModule in order to request 2sxc data
   ],
-  providers: providers,
+  providers,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
