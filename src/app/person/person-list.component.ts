@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-import { Context, Data, DnnAppComponent } from '@2sic.com/dnn-sxc-angular';
+import { Component, OnInit } from '@angular/core';
+import { Data } from '@2sic.com/dnn-sxc-angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'person-list',
@@ -10,12 +11,16 @@ export class PersonListComponent implements OnInit {
 
     constructor(
         private data: Data,
+        private http: HttpClient
     ) {
+      console.log('debug http', http);
     }
 
     ngOnInit() {
         this.data.content<Person>('person').get()
             .subscribe(persons => this.persons = persons);
+
+        this.http.get("app/xyz").toPromise();
     }
 }
 
